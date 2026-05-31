@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi graceellaa</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap');
+
+        :root {
+            --pink-soft: #ffe6ea;
+            --pink-main: #ff8fa3;
+            --pink-dark: #d6336c;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff0f3 0%, #ffccd5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        /* Background Animation Hearts */
+        .bg-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .heart-bg {
+            position: absolute;
+            bottom: -20px;
+            font-size: 2rem;
+            color: var(--pink-main);
+            opacity: 0.3;
+            animation: rise 10s infinite linear;
+        }
+
+        @keyframes rise {
+            0% { bottom: -20px; transform: translateX(0); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { bottom: 100vh; transform: translateX(-20px); opacity: 0; }
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: var(--pink-dark);
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0px #fff;
+        }
+
+        p.subtitle {
+            color: var(--pink-dark);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        /* Grid Container */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1000px;
+            padding: 20px;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: transparent;
+            width: 250px;
+            height: 350px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 20px rgba(214, 51, 108, 0.15);
+            border-radius: 20px;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card-front {
+            background-color: var(--white);
+            border: 4px solid var(--pink-main);
+        }
+
+        .card-back {
+            background-color: var(--pink-main);
+            color: var(--white);
+            transform: rotateY(180deg);
+            border: 4px solid var(--white);
+        }
+
+        /* Icon & Text */
+        .heart-icon {
+            font-size: 5rem;
+            color: var(--pink-dark);
+            animation: beat 1.5s infinite;
+        }
+
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .click-hint {
+            margin-top: 20px;
+            color: var(--pink-main);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .message-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .sender {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Decorative Background -->
+    <div class="bg-hearts" id="hearts-bg"></div>
+
+    <!-- Main Content -->
+    <h1>Hi graceellaa 💖</h1>
+    <p class="subtitle">Klik kartu dibawah yaa cellaa</p>
+
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="heart-icon">♥</div>
+                    <div class="click-hint">Buka Pesan</div>
+                </div>
+                <div class="card-back">
+                    <p class="message-text">"Makasih udah mau jadi temen, sekaligus tempat gw pulang setiap ada masalah"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="heart-icon">♥</div>
+                    <div class="click-hint">Buka Pesan</div>
+                </div>
+                <div class="card-back">
+                    <p class="message-text">"pas kita udah bener bener lulus, jangan lupain gw ya??"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="heart-icon">♥</div>
+                    <div class="click-hint">Buka Pesan</div>
+                </div>
+                <div class="card-back">
+                    <p class="message-text">"makasih udah mau dengerin yappingan gw, curhatan gw, dan lain sebagainya, makasih yaa cill"</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="heart-icon">♥</div>
+                    <div class="click-hint">Buka Pesan</div>
+                </div>
+                <div class="card-back">
+                    <p class="message-text">"ada pesan khusus buat kamu, graceellaa!
+                        1. jangan kebanyakan begadang, bcz gak sehat
+                        2. jangan lupa makan yang cukup
+                        3. jangan lupa istirahat yang cukup
+                        4. jangan suka mendem masalah sendiri"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script to create floating hearts background
+        function createHearts() {
+            const heartContainer = document.getElementById('hearts-bg');
+            const heartCount = 15;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart-bg');
+                heart.innerHTML = '♥';
+                
+                // Random position and animation delay
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                
+                heartContainer.appendChild(heart);
+            }
+        }
+
+        // Function to handle card click manually (if click needed instead of hover)
+        function flipCard(element) {
+            // This makes it work on click for mobile users nicely
+            element.querySelector('.card-inner').classList.toggle('flipped');
+        }
+
+        // Initialize background
+        createHearts();
+    </script>
+
+</body>
+</html>
